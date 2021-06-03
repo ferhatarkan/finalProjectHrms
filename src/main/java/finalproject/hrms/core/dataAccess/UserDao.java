@@ -1,9 +1,11 @@
-package finalproject.hrms.dataAccess.abstracts;
+package finalproject.hrms.core.dataAccess;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import finalproject.hrms.entities.concretes.User;
+import finalproject.hrms.core.entities.User;
+
 
 public interface UserDao extends JpaRepository<User,Integer>{
 
 }
+

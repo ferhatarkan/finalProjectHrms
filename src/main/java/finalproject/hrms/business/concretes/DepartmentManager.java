@@ -1,7 +1,9 @@
 package finalproject.hrms.business.concretes;
 
-import finalproject.hrms.business.abstracts.DepartmentService;
+import org.springframework.stereotype.Service;
 
+import finalproject.hrms.business.abstracts.DepartmentService;
+@Service
 public class DepartmentManager implements DepartmentService{
 
 }

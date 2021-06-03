@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import finalproject.hrms.business.abstracts.UserService;
+import finalproject.hrms.core.dataAccess.UserDao;
+import finalproject.hrms.core.entities.User;
 import finalproject.hrms.core.utilities.results.DataResult;
 import finalproject.hrms.core.utilities.results.SuccessDataResult;
-import finalproject.hrms.dataAccess.abstracts.UserDao;
-import finalproject.hrms.entities.concretes.User;
 
 @Service
 public class UserManager implements UserService{

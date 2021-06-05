@@ -5,9 +5,12 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import finalproject.hrms.core.entities.User;
 import lombok.AllArgsConstructor;
@@ -23,7 +26,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @PrimaryKeyJoinColumn(name = "user_id")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","cv"})
 public class JobSeeker extends User{
+	
+	
+	@JsonIgnore
+	@OneToOne(mappedBy = "jobSeeker")
+	private Cv cv;
 	
 	@Column(name = "first_name")
 	private String firstName;

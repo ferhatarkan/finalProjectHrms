@@ -30,7 +30,7 @@ public class SystemEmployee extends User{
 	
 	@ManyToOne
 	@JoinColumn(name="department_id")
-	private Department department;
+	private SystemEmployeeDepartment department;
 	public SystemEmployee(String email, String password,String firstName, String lastName) {
 		super(email, password);
 		this.firstName = firstName;

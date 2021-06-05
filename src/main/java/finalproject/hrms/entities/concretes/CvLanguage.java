@@ -1,13 +1,12 @@
 package finalproject.hrms.entities.concretes;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -18,20 +17,26 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "departments")
+@Table(name = "cvlanguages")
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisements"})
-public class Department {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler","cv"})
+public class CvLanguage {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
 	
-	@Column(name="name")
-	private String name;
+	@Column(name = "foreign_language_name")
+	private String cvLanguageName;
 	
-	@OneToMany(mappedBy = "department")
-	private List<SystemEmployee>  systemEmployees;
+	@Column(name = "level")
+	private String level;
 	
+	//@Column(name = "cv_id")
+	//private int cvId;
+	
+	@ManyToOne()
+	@JoinColumn(name = "cv_id")
+	private Cv cv;
 }

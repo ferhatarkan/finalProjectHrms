@@ -1,6 +1,6 @@
 package finalproject.hrms.entities.concretes;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -43,10 +43,10 @@ public class JobAdvertisement {
 	private int openPositionCount;
 	
 	@Column(name="last_apply_date")
-	private Date lastApplyDate;
+	private LocalDate lastApplyDate;
 	
 	@Column(name="apply_date")
-	private Date applyDate;
+	private LocalDate applyDate;
 	
 	@Column(name="is_active")
 	private Boolean isActive;

@@ -2,6 +2,8 @@ package finalproject.hrms.business.abstracts;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import finalproject.hrms.core.utilities.results.DataResult;
 import finalproject.hrms.core.utilities.results.Result;
 import finalproject.hrms.entities.concretes.JobAdvertisement;
